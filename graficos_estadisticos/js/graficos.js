@@ -7,7 +7,7 @@ let i = 0
 $.getJSON('js/histograma.json', function (result) {
     $.each(result, function(i, field){
         $(field).each(function(){
-            nombres[i] = field['Metadata'][2]['Nombre']
+            nombres[i] = field['MetaData'][2]['Nombre']
             valores[i] = field['Data'][0]['Valor']
         })
     })
@@ -17,7 +17,7 @@ const data = {
     labels: nombres,
     datasets: [{
       label: 'Histograma',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      data: valores,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(255, 159, 64, 0.2)',
